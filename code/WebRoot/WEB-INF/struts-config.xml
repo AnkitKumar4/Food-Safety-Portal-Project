@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="regionalFormBean" type="com.food.formbean.RegionalFormBean" />
+		<form-bean name="profileFormBean" type="com.food.formbean.ProfileFormBean" />
+		<form-bean name="GeneralFormBean" type="com.food.formbean.GeneralFormBean" />
+		<form-bean name="FoodFormBean" type="com.food.formbean.FoodFormBean" />
+
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/addStateAction" scope="request" type="com.food.strutsaction.AddStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/AddState.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/viewRegStateAction" scope="request"
+			type="com.food.strutsaction.ViewRegStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewStates.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/updateState" scope="request" type="com.food.strutsaction.StateUpdation">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/stateViewUpdation" scope="request"
+			type="com.food.strutsaction.StateViewUpdation">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/UpdateState.jsp" />
+		</action>
+		<action path="/deleteStateAction" type="com.food.strutsaction.DeleteStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/districtViewStateAction" scope="request"
+			type="com.food.strutsaction.DistrictViewStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/AddDistrict.jsp" />
+			<forward name="success" path="/AddDistrict.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/addDistrictAction" scope="request"
+			type="com.food.strutsaction.AddDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/viewSDistrictAction" scope="request"
+			type="com.food.strutsaction.ViewSDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewDistricts.jsp" />
+			<forward name="success" path="/ViewDistricts.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/viewStateDistrictAction" scope="request"
+			type="com.food.strutsaction.ViewStateDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewDistricts.jsp" />
+			<forward name="success" path="/ViewDistricts.jsp" />
+		</action>
+		<action path="/districtViewUpdation" type="com.food.strutsaction.DistrictViewUpdation">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/UpdateDistrict.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/UpdateDistrictAction" scope="request"
+			type="com.food.strutsaction.UpdateDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/DeleteDistrictAction" scope="request"
+			type="com.food.strutsaction.DeleteDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/CityViewStateAction" type="com.food.strutsaction.CityViewStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/AddCity.jsp" />
+			<forward name="success" path="/AddCity.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/CityDistrictAction" scope="request"
+			type="com.food.strutsaction.CityDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/AddCity.jsp" />
+			<forward name="success" path="/AddCity.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/AddCityAction" scope="request" type="com.food.strutsaction.AddCityAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/ViewCityViewStateAction" type="com.food.strutsaction.ViewCityViewStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewCities.jsp" />
+			<forward name="success" path="/ViewCities.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/ViewCityViewDistrictAction" scope="request"
+			type="com.food.strutsaction.ViewCityViewDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewCities.jsp" />
+			<forward name="success" path="/ViewCities.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/ViewCitiesAction" scope="request"
+			type="com.food.strutsaction.ViewCitiesAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="faliure" path="/ViewCities.jsp" />
+			<forward name="success" path="/ViewCities.jsp" />
+		</action>
+		<action path="/DeleteCitiesAction" type="com.food.strutsaction.DeleteCitiesAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/CityViewUpdation" type="com.food.strutsaction.CityViewUpdation">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/UpdateCity.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/UpdateCityAction" scope="request"
+			type="com.food.strutsaction.UpdateCityAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/CheckUserAction" type="com.food.strutsaction.CheckUserAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/UserRegistrationForm.jsp" />
+			<forward name="success" path="/UserRegistrationForm.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/RegisterPersonalAction" scope="request"
+			type="com.food.strutsaction.RegisterPersonalAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ViewRegistrationStateAction.do" />
+		</action>
+		<action path="/ViewRegistrationStateAction"
+			type="com.food.strutsaction.ViewRegistrationStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Address.jsp" />
+			<forward name="success" path="/Address.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/ViewRegistrationCityViewDistrictAction" scope="request"
+			type="com.food.strutsaction.ViewRegistrationCityViewDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Address.jsp" />
+			<forward name="success" path="/Address.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/ViewRegistrationCitiesAction" scope="request"
+			type="com.food.strutsaction.ViewRegistrationCitiesAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Address.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="regionalFormBean"
+			path="/UserRegisterAction" scope="request"
+			type="com.food.strutsaction.UserRegisterAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/UserRegistrationForm.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/LoginAction" scope="request" type="com.food.strutsaction.LoginAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/HomePage.jsp" />
+		</action>
+		<action path="/LogoutAction" type="com.food.strutsaction.LogoutAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/LoginForm.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/RecoverPasswordAction" scope="request"
+			type="com.food.strutsaction.RecoverPasswordAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/RecoverPassword.jsp" />
+			<forward name="success" path="/NewPassword.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/NewPasswordAction" scope="request"
+			type="com.food.strutsaction.NewPasswordAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/HomePage.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/ChangePasswordAction" scope="request"
+			type="com.food.strutsaction.ChangePasswordAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ChangePassword.jsp" />
+		</action>
+		<action path="/ViewProfileAction" type="com.food.strutsaction.ViewProfileAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/HomePage.jsp" />
+			<forward name="success" path="/ViewUserProfile.jsp" />
+		</action>
+		<action path="/ViewRegisteredUsersAction" type="com.food.strutsaction.ViewRegisteredUsersAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ViewListUsers.jsp" />
+		</action>
+		<action path="/DeleteUserAction" type="com.food.strutsaction.DeleteUserAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/TipsSuggesstions.jsp"
+			name="GeneralFormBean" path="/AddTipsSuggestion" scope="request"
+			type="com.food.strutsaction.AddTipsSuggestion">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/TipsSuggesstions.jsp" />
+		</action>
+		<action path="/ViewTipsSuggesitionAction" type="com.food.strutsaction.ViewTipsSuggesitionAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewTipsSuggesitions.jsp" />
+		</action>
+		<action path="/DeleteTipsAction" type="com.food.strutsaction.DeleteTipsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/CityComplaint.jsp"
+			name="GeneralFormBean" path="/PostComplaintAction" scope="request"
+			type="com.food.strutsaction.PostComplaintAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/CityComplaint.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/FeedBack.jsp" name="GeneralFormBean"
+			path="/PostFeedbackAction" scope="request"
+			type="com.food.strutsaction.PostFeedbackAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/FeedBack.jsp" />
+		</action>
+		<action path="/ViewFeedBackAction" type="com.food.strutsaction.ViewFeedBackAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ViewFeedBacks.jsp" />
+		</action>
+		<action path="/DeleteFeedbackAction" type="com.food.strutsaction.DeleteFeedbackAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/AddEnquiryDetails.jsp"
+			name="GeneralFormBean" path="/EnquiryFormAction" scope="request"
+			type="com.food.strutsaction.EnquiryFormAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/AddEnquiryDetails.jsp" />
+		</action>
+		<action path="/ViewEmquiryInfoAction" type="com.food.strutsaction.ViewEmquiryInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewEnquiryQuestions.jsp" />
+		</action>
+		<action path="/DeleteEnquiryQuestionAction"
+			type="com.food.strutsaction.DeleteEnquiryQuestionAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/EnquiryAnswer.jsp"
+			name="GeneralFormBean" path="/EnquiryAnswerAction" scope="request"
+			type="com.food.strutsaction.EnquiryAnswerAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/AddEducationDetails.jsp"
+			name="GeneralFormBean" path="/AddCareerInfoAction" scope="request"
+			type="com.food.strutsaction.AddCareerInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/AddEducationDetails.jsp" />
+		</action>
+		<action path="/ViewEduInfoAction" type="com.food.strutsaction.ViewEduInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ViewCareerInformation.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" name="GeneralFormBean"
+			path="/ViewComplaintsAction" scope="request"
+			type="com.food.strutsaction.ViewComplaintsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewCitizenComplaints.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" name="GeneralFormBean"
+			path="/DeleteComplaintsAction" scope="request"
+			type="com.food.strutsaction.DeleteComplaintsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" name="GeneralFormBean"
+			path="/ComplaintAnswerAction" scope="request"
+			type="com.food.strutsaction.ComplaintAnswerAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="FoodFormBean" name="FoodFormBean"
+			path="/AddRestaurantDetailsAction" scope="request"
+			type="com.food.strutsaction.AddRestaurantDetailsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/ViewCityRestaurantAction"
+			type="com.food.strutsaction.ViewCityRestaurantTimingsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewRestaurantTimeings.jsp" />
+		</action>
+		<action path="/DeleteRestaurantInfoAction"
+			type="com.food.strutsaction.DeleteRestaurantInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+			<forward name="failure" path="/Status.jsp" />
+		</action>
+    <action
+      attribute="FoodFormBean"
+      input="/UpdateRestaurant.jsp"
+      name="FoodFormBean"
+      path="/UpdateRestaurantRecord"
+      scope="request"
+      type="com.food.strutsaction.UpdateRestaurantRecord">
+      <set-property property="cancellable" value="true" />
+      <forward name="failure" path="/Status.jsp" />
+      <forward name="success" path="/UpdateRestaurant.jsp" />
+    </action>
+    <action
+      attribute="FoodFormBean"
+      name="FoodFormBean"
+      path="/UpdateRestaurantDetailsAction"
+      scope="request"
+      type="com.food.strutsaction.UpdateRestaurantDetailsAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="success" path="/Status.jsp" />
+    </action>
+    <action
+      attribute="FoodFormBean"
+      name="FoodFormBean"
+      path="/FoodInfoAction"
+      scope="request"
+      type="com.food.strutsaction.FoodInfoAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="success" path="/Status.jsp" />
+    </action>
+    <action path="/ViewFoodInfoAction" type="com.food.strutsaction.ViewFoodInfoAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="fialure" path="/Status.jsp" />
+      <forward name="success" path="/ViewFoodInformation.jsp" />
+    </action>
+    <action path="/ViewAdminFoodInfoAction" type="com.food.strutsaction.ViewAdminFoodInfoAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="failure" path="/Status.jsp" />
+      <forward name="success" path="/ViewAdminFoodInformation.jsp" />
+    </action>
+    <action path="/DeleteFoodInfoAction" type="com.food.strutsaction.DeleteFoodInfoAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="success" path="/Status.jsp" />
+    </action>
+
+	</action-mappings>
+
+	<message-resources parameter="com.food.strutsaction.ApplicationResources" />
+</struts-config>
+
